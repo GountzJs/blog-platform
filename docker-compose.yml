@@ -1,4 +1,16 @@
 services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: blog_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   web-blog:
     build:
       context: .
@@ -6,3 +18,6 @@ services:
     ports:
       - "80:80"
     container_name: web-blog
+
+volumes:
+  postgres_data:
