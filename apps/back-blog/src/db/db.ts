@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
 	database: "blog_db",
 	synchronize: true,
 	logging: true,
-	entities: [],
+	entities: ["./**/*.entity.ts"],
 	migrations: [],
 	subscribers: [],
 });
