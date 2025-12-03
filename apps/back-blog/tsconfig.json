@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "ES2022",
-		"module": "ESNext",
+		"module": "CommonJS",
 		"lib": ["ES2022"],
 		"moduleResolution": "node",
 		"esModuleInterop": true,
@@ -13,8 +13,9 @@
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
-		"noEmit": true,
-		"isolatedModules": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"strictPropertyInitialization": false,
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
