@@ -4,9 +4,8 @@ const rootEl = document.querySelector("#root");
 
 if (rootEl) {
 	rootEl.innerHTML = `
-  <div class="content">
-    <h1>Blog Platform</h1>
-    <p>Start building your blog with Rsbuild.</p>
-  </div>
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
 `;
 }
