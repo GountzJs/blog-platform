@@ -1,15 +1,28 @@
 {
   "name": "blog-platform",
   "version": "1.0.0",
-  "description": "",
+  "description": "Monorepo proyecto blog para TheAnibalOS",
   "private": true,
   "scripts": {
     "web:serve": "pnpm --filter web-blog dev",
     "web:build": "pnpm --filter web-blog build",
-    "web:preview": "pnpm --filter web-blog preview"
+    "web:preview": "pnpm --filter web-blog preview",
+    "back:serve": "pnpm --filter back-blog serve",
+    "back:build": "pnpm --filter back-blog build",
+    "back:preview": "pnpm --filter back-blog build && pnpm --filter back-blog start"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Gountzjs",
+    "email": "tomasjsdev@gmail.com"
+  },
   "license": "ISC",
-  "packageManager": "pnpm@10.22.0"
+  "packageManager": "pnpm@10.22.0",
+  "devDependencies": {
+    "@types/node": "24.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gountzjs/blog-platform.git"
+  }
 }
