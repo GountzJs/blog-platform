@@ -1,0 +1,8 @@
+services:
+  web-blog:
+    build:
+      context: .
+      dockerfile: apps/web-blog/Dockerfile
+    ports:
+      - "4200:80"
+    container_name: web-blog
