@@ -1,31 +1,31 @@
 {
-  "name": "back-blog",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "start": "node dist/index.mjs",
-    "serve": "tsx watch src/index.ts",
-    "build": "tsdown",
-    "format": "biome lint --write",
-    "format:check": "biome check --write"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.22.0",
-  "devDependencies": {
-    "@types/cors": "2.8.19",
-    "@types/express": "5.0.6",
-    "@types/morgan": "1.9.10",
-    "tsdown": "0.17.0-beta.5",
-    "tsx": "4.21.0",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "cors": "2.8.5",
-    "express": "5.2.1",
-    "morgan": "1.10.1"
-  }
+	"name": "back-blog",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"start": "node dist/index.mjs",
+		"serve": "tsx watch src/index.ts",
+		"build": "tsdown",
+		"format": "biome lint --write",
+		"format:check": "biome check --write"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.22.0",
+	"devDependencies": {
+		"@types/cors": "2.8.19",
+		"@types/express": "5.0.6",
+		"@types/morgan": "1.9.10",
+		"tsdown": "0.17.0-beta.5",
+		"tsx": "4.21.0",
+		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"cors": "2.8.5",
+		"express": "5.2.1",
+		"morgan": "1.10.1"
+	}
 }
