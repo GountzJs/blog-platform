@@ -4,5 +4,5 @@ services:
       context: .
       dockerfile: apps/web-blog/Dockerfile
     ports:
-      - "4200:80"
+      - "80:80"
     container_name: web-blog
