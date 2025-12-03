@@ -1,12 +1,19 @@
 import cors from "cors";
-import express, { Express } from "express";
+import express, { Express, Router } from "express";
 import morgan from "morgan";
+
+type Route = {
+  path: string;
+  router: Router;
+};
 
 export class App {
   private app: Express;
+  private basePath: string = "/api";
 
   constructor() {
     this.app = express();
+    this.initMiddleware();
   }
 
   private initMiddleware(): void {
@@ -16,8 +23,13 @@ export class App {
     this.app.use(morgan("dev"));
   }
 
+  initModules(modules: Route[]): void {
+    modules.map((module) => {
+      this.app.use(this.basePath + module.path, module.router);
+    });
+  }
+
   listen(): void {
-    this.initMiddleware();
     this.app.listen(8080, () => {
       console.log("🚀 Server running on http://localhost:8080");
     });
