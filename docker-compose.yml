@@ -19,5 +19,21 @@ services:
       - "80:80"
     container_name: web-blog
 
+  back-blog:
+    build:
+      context: .
+      dockerfile: apps/back-blog/Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: back-blog
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=blog_db
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+
 volumes:
   postgres_data:
