@@ -1,15 +1,17 @@
 {
-  "name": "web-blog",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "rsbuild build",
-    "dev": "rsbuild dev --open",
-    "preview": "rsbuild preview"
-  },
-  "devDependencies": {
-    "@rsbuild/core": "^1.6.7",
-    "typescript": "^5.9.3"
-  }
+	"name": "web-blog",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "rsbuild build",
+		"dev": "rsbuild dev --open",
+		"preview": "rsbuild preview",
+		"format": "biome lint --write",
+		"format:check": "biome check --write"
+	},
+	"devDependencies": {
+		"@rsbuild/core": "^1.6.7",
+		"typescript": "^5.9.3"
+	}
 }

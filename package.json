@@ -7,9 +7,13 @@
     "web:serve": "pnpm --filter web-blog dev",
     "web:build": "pnpm --filter web-blog build",
     "web:preview": "pnpm --filter web-blog preview",
+    "web:format": "pnpm --filter web-blog format",
+    "web:format:check": "pnpm --filter web-blog format:check",
     "back:serve": "pnpm --filter back-blog serve",
     "back:build": "pnpm --filter back-blog build",
-    "back:preview": "pnpm --filter back-blog build && pnpm --filter back-blog start"
+    "back:preview": "pnpm --filter back-blog build && pnpm --filter back-blog start",
+    "back:format": "pnpm --filter back-blog format",
+    "back:format:check": "pnpm --filter back-blog format:check"
   },
   "keywords": [],
   "author": {
@@ -19,6 +23,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.22.0",
   "devDependencies": {
+    "@biomejs/biome": "2.3.8",
     "@types/node": "24.10.1"
   },
   "repository": {
