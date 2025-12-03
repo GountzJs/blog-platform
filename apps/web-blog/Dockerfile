@@ -1,26 +1,12 @@
-FROM alpine:3.20 AS builder
-
-RUN apk add --no-cache \
-    curl \
-    bash \
-    libc6-compat \
-    git
-
-RUN apk add --no-cache nodejs npm
-
-RUN npm i -g pnpm@10.22.0
+FROM blog-deps AS build
 
 WORKDIR /app
 
-COPY . .
+RUN pnpm --filter web-blog build
 
-RUN pnpm install --frozen-lockfile
+FROM nginx:alpine
 
-RUN pnpm web:build
-
-FROM nginx:stable-alpine
-
-COPY --from=builder /app/apps/web-blog/dist/ /usr/share/nginx/html
+COPY --from=build /app/apps/web-blog/dist /usr/share/nginx/html
 
 EXPOSE 80
 

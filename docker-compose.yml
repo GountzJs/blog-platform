@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   postgres:
     image: postgres:17
@@ -10,6 +12,14 @@ services:
       - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - blog-network
+
+  deps:
+    image: blog-deps
+    build:
+      context: .
+      dockerfile: Dockerfile.deps
 
   web-blog:
     build:
@@ -18,6 +28,10 @@ services:
     ports:
       - "80:80"
     container_name: web-blog
+    depends_on:
+      - deps
+    networks:
+      - blog-network
 
   back-blog:
     build:
@@ -27,6 +41,7 @@ services:
       - "8080:8080"
     container_name: back-blog
     depends_on:
+      - deps
       - postgres
     environment:
       - DATABASE_HOST=postgres
@@ -34,6 +49,12 @@ services:
       - DATABASE_NAME=blog_db
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=postgres
+    networks:
+      - blog-network
 
 volumes:
   postgres_data:
+
+networks:
+  blog-network:
+    driver: bridge

@@ -1,23 +1,9 @@
-FROM alpine:3.20 AS builder
-
-RUN apk add --no-cache \
-    curl \
-    bash \
-    libc6-compat \
-    git \
-    nodejs \
-    npm
-
-RUN npm i -g pnpm@10.22.0
+FROM blog-deps AS build
 
 WORKDIR /app
 
-COPY . .
-
-RUN pnpm install --frozen-lockfile
-
-RUN pnpm back:build
+RUN pnpm --filter back-blog build
 
 EXPOSE 8080
 
-CMD ["node", "apps/back-blog/dist/index.js"]
+CMD ["pnpm", "back:start"]
