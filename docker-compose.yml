@@ -15,12 +15,6 @@ services:
     networks:
       - blog-network
 
-  deps:
-    image: blog-deps
-    build:
-      context: .
-      dockerfile: Dockerfile.deps
-
   web-blog:
     build:
       context: .
@@ -28,8 +22,6 @@ services:
     ports:
       - "80:80"
     container_name: web-blog
-    depends_on:
-      - deps
     networks:
       - blog-network
 
@@ -41,7 +33,6 @@ services:
       - "8080:8080"
     container_name: back-blog
     depends_on:
-      - deps
       - postgres
     environment:
       - DATABASE_HOST=postgres
