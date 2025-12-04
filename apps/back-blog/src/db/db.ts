@@ -5,7 +5,11 @@ import { FollowEntity } from "./entities/follow.entity";
 import { ProfileEntity } from "./entities/profile.entity";
 import { UserEntity } from "./entities/user.entity";
 
-process.loadEnvFile(resolve(cwd(), ".env"));
+if (process.env.NODE_ENV === "development") {
+	process.loadEnvFile(resolve(cwd(), ".env"));
+} else {
+	process.loadEnvFile();
+}
 
 export const AppDataSource = new DataSource({
 	type: "postgres",
