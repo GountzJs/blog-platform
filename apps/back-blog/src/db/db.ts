@@ -7,8 +7,6 @@ import { UserEntity } from "./entities/user.entity";
 
 if (process.env.NODE_ENV === "development") {
 	process.loadEnvFile(resolve(cwd(), ".env"));
-} else {
-	process.loadEnvFile();
 }
 
 export const AppDataSource = new DataSource({
