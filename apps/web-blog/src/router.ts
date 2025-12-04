@@ -122,7 +122,3 @@ export class Router {
 		history.forward();
 	}
 }
-
-const router = new Router();
-
-export default router;
