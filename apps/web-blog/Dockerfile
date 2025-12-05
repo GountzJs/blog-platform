@@ -8,9 +8,11 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/web-blog/package.json ./apps/web-blog/
 COPY apps/back-blog/package.json ./apps/back-blog/
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm fetch
 
 COPY . .
+
+RUN pnpm install --offline --frozen-lockfile
 
 RUN pnpm --filter web-blog build
 
