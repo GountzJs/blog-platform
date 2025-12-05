@@ -6,7 +6,7 @@ export class Home extends HTMLElement {
 
 	private render() {
 		this.innerHTML = `
-            <h1>Hola Anibal!!</h1>
+            <h1>Hola Gountz!!</h1>
         `;
 	}
 }
