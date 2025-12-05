@@ -14,14 +14,16 @@
 	"author": "",
 	"license": "ISC",
 	"packageManager": "pnpm@10.22.0",
+	"peerDependencies": {
+		"typescript": "5.9.3"
+	},
 	"devDependencies": {
 		"@types/cors": "2.8.19",
 		"@types/express": "5.0.6",
 		"@types/morgan": "1.9.10",
 		"reflect-metadata": "0.2.2",
 		"tsx": "4.21.0",
-		"typeorm": "0.3.28",
-		"typescript": "^5.9.3"
+		"typeorm": "0.3.28"
 	},
 	"dependencies": {
 		"cors": "2.8.5",
